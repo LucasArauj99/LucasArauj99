@@ -7,6 +7,7 @@
 
 # 💻 Tech Stack:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![SQL](https://www.tshirtgeek.com.br/wp-content/uploads/2021/09/com037-scaled.jpg)
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=LucasArauj99&theme=monokai&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=LucasArauj99&theme=monokai&hide_border=false)<br/>
