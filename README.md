@@ -7,8 +7,8 @@
 
 # 💻 Tech Stack:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![SQLite](https://img.shields.io/badge/SQLite-%23003B57?logo=sqlite)
-![MySQL](https://img.shields.io/badge/MySQL-%234479A1?logo=mysql&logoColor=black&color=white)
+![SQLite](https://img.shields.io/badge/SQLite-%23003B57?style=for-the-badge&logo=sqlite)
+![MySQL](https://img.shields.io/badge/MySQL-%234479A1?style=for-the-badge&logo=mysql&logoColor=black&color=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%234169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
 # 📊 GitHub Stats:
