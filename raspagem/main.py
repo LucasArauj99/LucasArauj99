@@ -22,11 +22,14 @@ class Site:
             #link = t.get('href')
             #self.link_noticias.append(link)
         print('Principais noticias:')
-        for p in self.Princiapais_noticias:
+        for i, p in enumerate(self.Princiapais_noticias, 1):
             print('')
-            print(p.get_text()) 
+            print(f'[{i}]{p.get_text()}') 
             link = p.get('href')
-            self.link_noticias.append(link)
+            self.link_noticias.append(p)
+        escolher_noticia = int(input('escolha a noticia q deseja: '))
+        escolhida = self.link_noticias[escolher_noticia].get('href')
+        print(escolhida)
 
     def destaques(self):
         print('Destaques:')
@@ -35,14 +38,20 @@ class Site:
             print(no.get_text())   
 
 
-while True:
-    test1 = Site()
-    dec = int(input("Para ver as principais nóticias Digite [1] para ver os Destaques [2] e para sair [3]: "))
-    if dec == 1:
-        test1.principais_noticias()
-    elif dec == 2:
-        test1.destaques()
-    else:
-        break
-        
 
+
+def tela_principal():
+    while True:
+        test1 = Site()
+        dec = int(input("[1] Principais notícias\n[2] Destaques\n[3] Sair\n: "))
+        if dec == 1:
+            test1.principais_noticias()
+        elif dec == 2:
+            test1.destaques()
+        else:
+            break
+
+tela_principal()
+ 
+
+        
