@@ -1,3 +1,5 @@
+import os
+
 logo = '''
  _____________________
 |  _________________  |
@@ -21,33 +23,38 @@ class calculadora:
         self.num2 = num2
 
     def soma(self):
-        print(self.num + self.num2)
-
+        return self.num + self.num2
 
     def subtracao(self):
-           print(self.num - self.num2)
-
+        return self.num - self.num2
 
     def multiplicacao(self):
-         print(self.num * self.num2)
+        return self.num * self.num2
 
 
     def divisao(self):
-         print(self.num / self.num2)
-
-print(logo) 
-
+        return self.num / self.num2
+print(logo)
 while True:
     num = float(input('Digite um numero:'))
-    op = str(input('O que deseja, [+] [-] [*] [/] :'))
-    num2 = float(input('Digite um numero:'))
+    nova_conta = True
+    while nova_conta:
+        op = str(input('O que deseja, [+] [-] [*] [/] :'))
+        num2 = float(input('Digite um numero:'))
 
+        calcular = calculadora(num, num2)
 
+        operacao = {'+': calcular.soma, '-':calcular.subtracao, '*':calcular.multiplicacao, '/':calcular.divisao}[op]()
+        print(f'resultado: {operacao}')
+        conf = str(input('Deseja continuar?\n[S] sim \n[N] nova conta\n[F] Sair:')).upper()[0]
+        if conf == 'S':
+            num = operacao
+        elif conf == 'N':
+            os.system('cls')
+            nova_conta = False
 
-    calcular = calculadora(num, num2)
-
-    operacao = {'+': calcular.soma, '-':calcular.subtracao, '*':calcular.multiplicacao, '/':calcular.divisao}[op]()
-
-    conf = str(input('Deseja continuar? [S] ou [N]:')).split()[0]
-    if conf == 'N':
-         break
+        else:
+            nova_conta = False
+    if conf == 'F':
+        break
+    
