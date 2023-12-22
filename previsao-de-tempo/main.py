@@ -2,7 +2,6 @@ import requests
 from googletrans import Translator
 import os
 
-#tokenn = 'cd0339008ac7bbcbf2b539e203d12f4b'
 tokenn = os.environ.get('OPENWEATHERMAP_TOKEN')
 
 lat = -8.05428
