@@ -1,13 +1,7 @@
 import requests
 from googletrans import Translator
 import os
-
-tokenn = os.environ.get('OPENWEATHERMAP_TOKEN')
-
-lat = -8.05428
-lon = -34.8813
-
-url1 = f"https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={tokenn}"
+from geopy.geocoders import OpenCage
 
 def converso_de_temperatuda(temperatura):
     #transforma kelvin para celsius
@@ -29,6 +23,16 @@ def previsao():
          f"com a temperatura podendo variar de {temp_minima}°C até {temp_maxima}°C")
 
 try:
+
+    tokenn = os.environ.get('OPENWEATHERMAP_TOKEN')
+    token_geo = os.environ.get('geo_token')
+    cidade = str(input("Qual a cidade que deseja ver: "))
+    estado = str(input('Qual o estado: '))
+    geocoder = OpenCage(token_geo)
+    location = geocoder.geocode(f"{cidade}, {estado}")
+    lat, lon = location.latitude, location.longitude
+
+    url1 = f"https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={tokenn}"
     # Fazendo a solicitação GET
     response = requests.get(url=url1)
 
@@ -37,7 +41,7 @@ try:
         dados = response.json()
         temperatura_atual()
 
-        # Obtendo a primeira previsão
+        
         #primeira_previsao = dados['daily'][0]['temp']
         previsao()
     else:
